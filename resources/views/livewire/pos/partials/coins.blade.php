@@ -8,7 +8,7 @@
                         @foreach($denominations as $d)
                             <div class="col-sm mt-2">
                                 <button wire:click.prevent="ACash({{ $d->value }})" class="btn btn-dark btn-block den">
-                                    {{ $d->value > 0 ? 'S/.' . number_format( $d->value, 2, '.', '') : 'Exacto' }}
+                                    {{ $d->value > 0 ? 'S/' . number_format( $d->value, 2, '.', '') : 'Exacto' }}
                                 </button>
                             </div>
                         @endforeach
@@ -22,6 +22,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text input-gp hideonsm" style="background: #3B3F5C; color: white;">
                                     Efectivo F8
+                                </span>
                             </div>
                             <input type="number" id="cash" wire:model="efectivo" wire:keydown.enter="saveSale" class="form-control text-center" value="{{ $efectivo }}" />
                             <div class="input-group-append">
